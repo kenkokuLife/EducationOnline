@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.annotation.PostConstruct;
 import java.util.List;
 
 /**
@@ -28,7 +29,17 @@ public class EduTeacherController {
 
     @GetMapping
     public List<EduTeacher> findAllTeacher() {
+
         return teacherService.list(null);
+    }
+
+    @PostConstruct
+    public void testInsert() {
+        EduTeacher eduTeacher = new EduTeacher();
+        eduTeacher.setName("Jerry");
+        eduTeacher.setIntro("賢い");
+
+        teacherService.save(eduTeacher);
     }
 }
 

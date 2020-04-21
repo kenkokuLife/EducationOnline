@@ -1,0 +1,19 @@
+-- noinspection SqlNoDataSourceInspectionForFile
+
+DROP TABLE IF EXISTS EDU_TEACHER;
+
+CREATE TABLE EDU_TEACHER
+(
+  id      VARCHAR(19) NOT NULL COMMENT '主键ID',
+  name    VARCHAR(20) NULL DEFAULT NULL COMMENT '姓名',
+  intro   VARCHAR(500) NOT NULL DEFAULT '' COMMENT '讲师简介',
+  career  VARCHAR(500) DEFAULT NULL COMMENT '讲师资历',
+  level   int(10) NOT NULL DEFAULT 0 COMMENT '',
+  avatar  varchar(255) DEFAULT NULL COMMENT '',
+  sort    int(10) NOT NULL DEFAULT 0 COMMENT '',
+  is_deleted int(1) NOT NULL DEFAULT 0 COMMENT '',
+  gmt_create DATETIME NOT NULL DEFAULT  '2020-12-31 00:00' COMMENT '',
+  gmt_modified DATETIME NOT NULL DEFAULT  '2020-12-31 00:00' COMMENT '',
+  PRIMARY KEY (id),
+  UNIQUE KEY uk_name (name)
+);
