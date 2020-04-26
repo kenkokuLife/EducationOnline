@@ -9,8 +9,21 @@ spring:
     password: password
   application:
     name: service-edu
-  profiles:
-    active: dev
+profiles:
+  active: dev
+
+server:
+  port: 8001
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+#mapper-locations: classpath:com.kenkoku.service/*/mapper/*.xml
+#global-config:
+#  db-config:
+#    logic-delete-value: 1
+#    logic-not-delete-value: 0
+
 
 # Logger Config
 #logging:

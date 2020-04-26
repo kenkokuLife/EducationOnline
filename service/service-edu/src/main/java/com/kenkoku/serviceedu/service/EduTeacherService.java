@@ -1,5 +1,7 @@
 package com.kenkoku.serviceedu.service;
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.kenkoku.serviceedu.entity.vo.TeacherQuery;
 import com.kenkoku.serviceedu.entity.EduTeacher;
 import com.baomidou.mybatisplus.extension.service.IService;
 
@@ -13,4 +15,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface EduTeacherService extends IService<EduTeacher> {
 
+    void pageQuery(Page<EduTeacher> pageParam, TeacherQuery teacherQuery);
 }
